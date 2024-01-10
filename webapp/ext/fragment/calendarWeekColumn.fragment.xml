@@ -1,0 +1,10 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m">
+	<Column id="ExtensionWizard::ColumnBreakout" width="100%">
+		<Text text="Calendar week"/>
+		<customData>
+			<core:CustomData key="p13nData"
+				value='\{"columnKey": "123", "minLength": "100", "minWidth ": "100", "columnIndex":"10", "fixedLayout":"false"}'/>
+			<!--<core:CustomData key="p13nData"  value='\{"columnKey": "kuerzel", "leadingProperty":"kuerzel", "additionalProperty":"kuerzel", "columnIndex" : "50"}'/>-->
+		</customData>
+	</Column>
+</core:FragmentDefinition>

@@ -1,0 +1,30 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:smartField="sap.ui.comp.smartfield" xmlns:layout="sap.ui.layout"
+	xmlns:viz.data="sap.viz.ui5.data" xmlns:viz="sap.viz.ui5.controls" xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
+	xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/10">
+	<!--<Text text="{personalnummer}"/>-->
+
+
+		<layout:FixFlex>
+		<layout:flexContent>
+			<viz:Popover id="idPopOver"></viz:Popover>
+			<viz:VizFrame id="idVizFrame2" uiConfig="{applicationSet:'fiori'}" height='100%' width="100%" vizType='heatmap'>
+				<viz:dataset>
+					<viz.data:FlattenedDataset data="{ path: 'to_heatmap'}">
+						<viz.data:dimensions>
+							<viz.data:DimensionDefinition name="YAchse" value="{YAchse}"/>
+							<viz.data:DimensionDefinition name="XAchse" value="{XAchse}"/>
+						</viz.data:dimensions>
+						<viz.data:measures>
+							<viz.data:MeasureDefinition name="Renevue" value="{Renevue}"/>
+						</viz.data:measures>
+					</viz.data:FlattenedDataset>
+				</viz:dataset>
+				<viz:feeds>
+					<viz.feeds:FeedItem uid="color" type="Measure" values="Renevue"/>
+					<viz.feeds:FeedItem uid="categoryAxis" type="Dimension" values="XAchse"/>
+					<viz.feeds:FeedItem uid="categoryAxis2" type="Dimension" values="YAchse"/>
+				</viz:feeds>
+			</viz:VizFrame>
+		</layout:flexContent>
+	</layout:FixFlex>
+</core:FragmentDefinition>
